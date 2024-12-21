@@ -27,6 +27,7 @@ Although the interface is minimalistic, it is designed to provide the best possi
 </div>
 
 
+
 ## Feature 2: Move Generation
 
 This chess game generates proper moves for each piece, including normal moves, attacking moves, En Passant, and Castling.
@@ -68,6 +69,12 @@ print(board.get_valid_mv(position='e1', deco=False))
 # Output: ['e2', 'f1', 'd1', 'f2', 'd2', 'c1', 'g1']
 ```
 
+### Benefits:
+- Comprehensive Move Logic: The get_valid_mv() method handles all possible movements, ensuring accurate and realistic gameplay.
+- Move Decorations: The use of decorations clearly indicates different types of moves, improving the readability of valid move options.
+- Customization: The ability to disable move decorations (by setting deco=False) gives flexibility to the programmer or user based on preference.
+- Special Move Handling: Special moves like En Passant and Castling are integrated, adhering to the official chess rules.
+
 ## Feature 3: Provides Commands
 
 This chess game features a command-line interface (CLI) for managing various aspects of the game. The commands are accessed via a special command mode that allows players to control the game state, perform actions, and retrieve game information.
@@ -108,13 +115,52 @@ Here’s a list of commands you can use in the command mode:
 - **Error Handling**: The ability to reset (`--rsg`) and undo moves provides a safety net for mistakes.
 
 
-## Feature 4: [Move History]
-- **Description**: This Project also provides proper record of move history like Moves no., Detailed Notation, Actual Notation, Move Type, Player
-- **How to View**: 
-  - While Playing:
-     - Step-1: During the game, when prompted to enter the 'from square' or 'to square' for moving pieces, type the command `--cmd` to open the command mode.
-     - Step-2: Enter Command the `--his` to 'Display the move history'
-      Example: ![Example of using cmd --his](assets/images/cmdPanel1.png) 
-    
-  - -hjk
-- **Example**: Example code or output.
+
+## Feature 4: Move History
+
+This project keeps a comprehensive record of the move history, including details like:
+- **Move Number**: The sequential number of each move.
+- **Detailed Notation**: A descriptive notation for each move.
+- **Actual Notation**: The standard chess notation.
+- **Move Type**: Indicates whether the move is normal, attacking, En Passant, or Castling.
+- **Player**: The player (White or Black) who made the move.
+
+### How to View:
+
+- #### While Playing:
+ 1. During the game, when prompted to enter the 'from square' or 'to square' for moving pieces, type the command `--cmd` to open the command mode.
+ 2. Enter the command `--his` to display the move history.
+
+   **Example**:
+   
+   ![Example of using cmd --his](assets/images/cmdPanel1.png)
+
+- #### Directly Through `moves_his.txt` File:
+ - The program simultaneously records move history in a file named `moves_his.txt` located in the `src` folder (the same location as `chessboard_.py`).
+ - You can check the file for a complete record of the game’s move history.
+
+  **Example**: [Location of `moves_his.txt`](src/moves_his.txt)
+
+### Customizations:
+Programmers can customize how the move history is recorded by modifying constant variables in `chessboard_.py`:
+
+1. **Enable or Disable Move Recording in File**:
+   - Set the value of `MAKE_RECORD_OF_MOVES_IN_OTHER_FILE` to `True` (to enable) or `False` (to disable).
+
+2. **Change File Path**:
+   - Update the value of `MOVES_HISTORY_PATH` to specify a different file path for the move history.
+
+   **Code Example**:
+   ```python
+   # Lines 10 and 11 in chessboard_.py
+   # SOME IMPORTANT VARIABLES
+   MAKE_RECORD_OF_MOVES_IN_OTHER_FILE = True  # Enables file recording
+   MOVES_HISTORY_PATH = 'moves_his.txt'       # Default file path
+   ```
+   
+### Benefits:
+- **Detailed Tracking**: Provides a clear and organized record of moves for analysis or review.
+- **In-Game Access**: Players can view move history during the game without pausing or restarting.
+- **Customizable Options**: Programmers can enable/disable recording or modify the file path as per their requirements.
+- **Persistence**: The `moves_his.txt` file ensures that move history is saved for later reference, even after the game ends.
+```
