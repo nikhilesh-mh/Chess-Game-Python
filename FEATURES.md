@@ -174,27 +174,26 @@ This project keeps a comprehensive record of the move history, including details
 ### How to View:
 
 - #### While Playing:
- 1. During the game, when prompted to enter the 'from square' or 'to square' for moving pieces, type the command `--cmd` to open the command mode.
- 2. Enter the command `--his` to display the move history.
+  - ***Step-1***: During the game, when prompted to enter the 'from square' or 'to square' for moving pieces, type the command `--cmd` to open the command mode.
+  - ***Step-2***: Enter the command `--his` to display the move history.
     
 | Example of using cmd --his |
 |------------------------------------------|
 | ![Example of using cmd --his](assets/images/cmdPanel1.png) |
 
 - #### Directly Through `moves_his.txt` File:
- - The program simultaneously records move history in a file named `moves_his.txt` located in the `src` folder (the same location as `chessboard_.py`).
- - You can check the file for a complete record of the game’s move history.
+  - The program simultaneously records move history in a file named `moves_his.txt` located in the `src` folder (the same location as `chessboard_.py`).
+  - You can check the file for a complete record of the game’s move history.
 
   **Example**: [Location of `moves_his.txt`](src/moves_his.txt)
 
 ### Customizations:
 Programmers can customize how the move history is recorded by modifying constant variables in `chessboard_.py`:
+  1. **Enable or Disable Move Recording in File**:
+      - Set the value of `MAKE_RECORD_OF_MOVES_IN_OTHER_FILE` to `True` (to enable) or `False` (to disable).
 
-1. **Enable or Disable Move Recording in File**:
-   - Set the value of `MAKE_RECORD_OF_MOVES_IN_OTHER_FILE` to `True` (to enable) or `False` (to disable).
-
-2. **Change File Path**:
-   - Update the value of `MOVES_HISTORY_PATH` to specify a different file path for the move history.
+  2. **Change File Path**:
+      - Update the value of `MOVES_HISTORY_PATH` to specify a different file path for the move history.
 
    **Code Example**:
    ```python
