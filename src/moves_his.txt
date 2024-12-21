@@ -1,0 +1,19 @@
++-----------+-------------------+-----------------+-----------+--------+
+| Moves no. | Detailed Notation | Actual Notation | Move Type | Player |
++-----------+-------------------+-----------------+-----------+--------+
+|     1     |     Pe2 to e4     |       Pe4       |   Normal  | White  |
+|     2     |     Pe7 to e5     |       Pe5       |   Normal  | Black  |
+|     3     |     Qd1 to h5     |       Qh5       |   Normal  | White  |
+|     4     |     Pg7 to g6     |       Pg6       |   Normal  | Black  |
+|     5     |     Qh5 to Pe5    |      Qxe5+      |   Attack  | White  |
+|     6     |     Bf8 to e7     |       Be7       |   Normal  | Black  |
+|     7     |     Qe5 to Rh8    |       Qxh8      |   Attack  | White  |
+|     8     |     Be7 to f8     |       Bf8       |   Normal  | Black  |
+|     9     |     Qh8 to Ng8    |       Qxg8      |   Attack  | White  |
+|     10    |     Pf7 to f5     |       Pf5       |   Normal  | Black  |
+|     11    |     Bf1 to c4     |       Bc4       |   Normal  | White  |
+|     12    |     Pd7 to d6     |       Pd6       |   Normal  | Black  |
+|     13    |     Qg8 to f7     |       Qf7+      |   Normal  | White  |
++-----------+-------------------+-----------------+-----------+--------+
+
+[('e2', 'e4'), ('e7', 'e5'), ('d1', 'h5'), ('g7', 'g6'), ('h5', 'e5'), ('f8', 'e7'), ('e5', 'h8'), ('e7', 'f8'), ('h8', 'g8'), ('f7', 'f5'), ('f1', 'c4'), ('d7', 'd6'), ('g8', 'f7')]
