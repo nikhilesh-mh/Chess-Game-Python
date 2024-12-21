@@ -21,7 +21,8 @@ Although the interface is minimalistic, it is designed to provide the best possi
 
 ### Example:
 <div style="display: flex; justify-content: space-between;">
-  <img src="assets/images/gameplay1.png" alt="Gameplay" width="45%" />
-  <img src="assets/images/gameplay1.png" alt="Settings" width="45%" />
+  <img src="assets/images/gameplay1.png" alt="Gameplay" width="33%" />
+  <img src="assets/images/gameplay2.png" alt="Settings" width="33%" />
+  <img src="assets/images/gameplay3.png" alt="Settings" width="33%" />
 </div>
 
