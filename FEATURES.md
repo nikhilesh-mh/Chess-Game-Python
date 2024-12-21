@@ -81,8 +81,8 @@ During the game, when prompted to enter the 'from square' or 'to square' for mov
 - **Example**:
 
     <div style="display: flex; justify-content: space-between;">
-      <img src="assets/images/gameplay4.png" alt="Example of entering CMD mode" width="45%" />
-      <img src="assets/images/gameplay5.png" alt="Using commands in CMD mode" width="45%" />
+      <img src="assets/images/gameplay4.png" alt="Example of entering CMD mode 1" width="45%" />
+      <img src="assets/images/gameplay5.png" alt="Example of entering CMD mode 2" width="45%" />
     </div>
 
 ### Supported Commands:
@@ -111,7 +111,10 @@ Here’s a list of commands you can use in the command mode:
 ## Feature 4: [Move History]
 - **Description**: This Project also provides proper record of move history like Moves no., Detailed Notation, Actual Notation, Move Type, Player
 - **How to View**: 
-  - While Playing
+  - While Playing:
+     - Step-1: During the game, when prompted to enter the 'from square' or 'to square' for moving pieces, type the command `--cmd` to open the command mode.
+     - Step-2: Enter Command the `--his` to 'Display the move history'
+      Example: ![Example of using cmd --his](assets/images/cmdPanel1.png) 
     
   - -hjk
 - **Example**: Example code or output.
