@@ -13,19 +13,67 @@ The user interface (UI) for this chess game is designed using the **Command Prom
 - **Input Prompts**: The game provides intuitive prompts to guide the player in making moves. Instructions are displayed clearly on the command line, making the user experience smoother.
 - **Move Feedback**: After each move, the updated game board is displayed, reflecting the changes and giving instant feedback to the player.
 
+### Customizations:
+Programmers can easily customize the user interface to tailor the game to their preferences. The following options are available:
+
+1. **Player Names**:
+   - Set custom names for the players by modifying the `PLAYER_NAMES` dictionary.
+   ```python
+   PLAYER_NAMES = { 
+        'white': "Magnus Carlsen",
+        'black': "Hikaru Nakamura"
+   }
+   ```
+   - These names are displayed during gameplay to enhance personalization.
+
+2. **UI Settings**:
+   - Customize key UI elements using the `UI_SETTINGS` dictionary.
+   ```python
+   UI_SETTINGS = {
+       "Player's Name On Corner": True,   # Display player names at the board's corners
+       "Display Colored Board": True,    # Enable or disable colored board display
+   }
+   ```
+
+3. **Chessboard Colors**:
+   - Adjust the RGB values for the chessboard background and piece display to create a custom visual theme.
+   ```python
+   R, G, B = (30, 0, 70)  # Adjust these values (r >= 60, g >= 20, b >= 80)
+   ```
+   - **Note**: The minimum thresholds ensure optimal contrast and readability.
+
+4. **Piece Representation**:
+   - If the game is run in the CMD panel (not in VS Code's terminal), chess pieces may appear as `[?]`. To address this, programmers can customize how the pieces are displayed by modifying the constant variable `REPRESENT_PIECE_WITH` in `chessboard_piece.py`.
+   - Options for representation:
+     - **'Symbol'**: Use symbols for pieces (e.g., ♟︎, ♞, ♝).
+     - **'Letter'**: Use letters for pieces (e.g., P, N, B).
+
+   ```python
+   # line 4; chessboard_piece.py
+   REPRESENT_PIECE_WITH = 'Symbol'  # 'Symbol' or 'Letter'
+
+   PIECE_SYMBOLS = {
+       'Symbol':{'Pawnb': "[♟︎]", 'Knightb': "[♞]", 'Bishopb': "[♝]", 'Rookb': "[♜]", 'Queenb': "[♛]", 'Kingb': "[♚]",
+                 'Pawnw': "[♙]", 'Knightw': "[♘]", 'Bishopw': "[♗]", 'Rookw': "[♖]", 'Queenw': "[♕]", 'Kingw': "[♔]"},
+       'Letter':{'Pawnb': "[P]", 'Knightb': "[N]", 'Bishopb': "[B]", 'Rookb': "[R]", 'Queenb': "[Q]", 'Kingb': "[K]",
+                 'Pawnw': "[p]", 'Knightw': "[n]", 'Bishopw': "[b]", 'Rookw': "[r]", 'Queenw': "[q]", 'Kingw': "[k]"},
+   }
+   ```
+   - **Note**: Programmers can also create their own custom piece representations by adding to the `PIECE_SYMBOLS` dictionary.
+
+
 ### Benefits:
 - **Simple and Lightweight**: The CMD-based UI is easy to implement and doesn’t require heavy resources, making it accessible for all users without the need for complex graphical setups.
-- **Focus on Gameplay**: The simplicity of the interface ensures that the player can focus entirely on the game, with no distractions from complex UI elements.
+- **Personalized Experience**: Custom player names and UI settings add a personal touch to the game.
+- **Improved Visuals**: Flexible options for adjusting board colors enhance the visual clarity and appeal.
+- **Focus on Gameplay**: The minimalistic design ensures that players can focus entirely on the game without distractions from unnecessary UI elements.
 
 Although the interface is minimalistic, it is designed to provide the best possible clarity and user experience within the constraints of a command-line environment.
 
-### Example:
-<div style="display: flex; justify-content: space-between;">
-  <img src="assets/images/gameplay1.png" alt="UI-Example1" width="33%" />
-  <img src="assets/images/gameplay2.png" alt="UI-Example2" width="33%" />
-  <img src="assets/images/gameplay3.png" alt="UI-Example3" width="33%" />
-</div>
-
+### Examples:
+| UI When Piece represented with Symbols | UI When Piece represented with Letters | UI When "Display Colored Board" is False |          
+|----------------------------------------|----------------------------------------|------------------------------------------|
+| <img src="assets/images/gameplay1.png" alt="UI-Example1" width="100%"/> | <img src="assets/images/gameplay2.png" alt="UI-Example2" width="100%"/> | <img src="assets/images/gameplay3.png" alt="UI-Example3" width="100%"/> |
 
 
 ## Feature 2: Move Generation
@@ -85,12 +133,10 @@ The game provides a flexible **command-line interface** through the method `open
 ### How to Use:
 During the game, when prompted to enter the 'from square' or 'to square' for moving pieces, type the command `--cmd` to open the command mode. Once in the command panel, you can input any of the supported commands.
 
-- **Example**:
-
-    <div style="display: flex; justify-content: space-between;">
-      <img src="assets/images/gameplay4.png" alt="Example of entering CMD mode 1" width="45%" />
-      <img src="assets/images/gameplay5.png" alt="Example of entering CMD mode 2" width="45%" />
-    </div>
+**Examples**:
+| Example of entering CMD mode 1 | Example of entering CMD mode 2 |
+|--------------------------------|--------------------------------|
+| ![Example of entering CMD mode 1](assets/images/gameplay4.png) | ![Example of entering CMD mode 2](assets/images/gameplay5.png) |
 
 ### Supported Commands:
 Here’s a list of commands you can use in the command mode:
@@ -130,10 +176,10 @@ This project keeps a comprehensive record of the move history, including details
 - #### While Playing:
  1. During the game, when prompted to enter the 'from square' or 'to square' for moving pieces, type the command `--cmd` to open the command mode.
  2. Enter the command `--his` to display the move history.
-
-   **Example**:
-   
-   ![Example of using cmd --his](assets/images/cmdPanel1.png)
+    
+| Example of using cmd --his |
+|------------------------------------------|
+| ![Example of using cmd --his](assets/images/cmdPanel1.png) |
 
 - #### Directly Through `moves_his.txt` File:
  - The program simultaneously records move history in a file named `moves_his.txt` located in the `src` folder (the same location as `chessboard_.py`).
