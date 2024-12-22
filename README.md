@@ -47,7 +47,7 @@ For more information, check this [FEATURES.md](FEATURES.md).
       ```
 
    - ***Playing the game***:
-      - The game will prompt players with the message: "Mission: Find a move for a checkmate." You just have to enter the move "g8 to f7".
+      - The game will prompt players with the message: "Mission: Find a move for a checkmate." You just have to enter the move "g8" and then "f7".
       - The board will be displayed after each move.
 
 2. **For Full Game Example.**
