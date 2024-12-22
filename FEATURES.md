@@ -176,16 +176,16 @@ This project keeps a comprehensive record of the move history, including details
 - #### While Playing:
   - ***Step-1***: During the game, when prompted to enter the 'from square' or 'to square' for moving pieces, type the command `--cmd` to open the command mode.
   - ***Step-2***: Enter the command `--his` to display the move history.
-    
-| Example of using cmd --his |
-|------------------------------------------|
-| ![Example of using cmd --his](assets/images/cmdPanel1.png) |
+       
+      | **Example of using cmd --his** |
+      |:------------------------------------------:|
+      | ![Example of using cmd --his](assets/images/cmdPanel1.png) |
 
 - #### Directly Through `moves_his.txt` File:
   - The program simultaneously records move history in a file named `moves_his.txt` located in the `src` folder (the same location as `chessboard_.py`).
   - You can check the file for a complete record of the game’s move history.
     
-    **Example**: [Location of `moves_his.txt`](src/moves_his.txt)
+    **Example**: [`Location of moves_his.txt`](src/moves_his.txt)
 
 ### Customizations:
 Programmers can customize how the move history is recorded by modifying constant variables in `chessboard_.py`:
@@ -208,4 +208,5 @@ Programmers can customize how the move history is recorded by modifying constant
 - **In-Game Access**: Players can view move history during the game without pausing or restarting.
 - **Customizable Options**: Programmers can enable/disable recording or modify the file path as per their requirements.
 - **Persistence**: The `moves_his.txt` file ensures that move history is saved for later reference, even after the game ends.
+
 
