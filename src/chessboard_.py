@@ -7,20 +7,20 @@ from prettytable            import PrettyTable
 import os
 
 # SOME IMPORTANT VARIABLES
-MAKE_RECORD_OF_MOVES_IN_OTHER_FILE = True
-MOVES_HISTORY_PATH = 'moves_his.txt'
-USER_COLOR_CHOICE  = 'white' # user's color choice to compete with chess bot # 2nd option: 'black'
+MAKE_RECORD_OF_MOVES_IN_OTHER_FILE = True   # Enables file recording
+MOVES_HISTORY_PATH = 'moves_his.txt'        # Default file path
+USER_COLOR_CHOICE  = 'white'                # user's color choice to compete with chess bot # 2nd option: 'black'
 PLAYER_NAMES = { 
     'white': "Magnus Carlsen",
-    'black': "Hikaru Nakamura "
+    'black': "Hikaru Nakamura"
 }
 
 # UI - Settings
 UI_SETTINGS = {
     "Player's Name On Corner": True,
-    "Display Colored Board": False,
+    "Display Colored Board": True,
 }
-R, G, B = (0 ,0, 10) # r >= 60, g >= 20, b>=80
+R, G, B = (30 ,0, 70) # Adjust these values (r >= 60, g >= 20, b >= 80)
 
 class ChessBoard: 
     tabular_history = PrettyTable(['Moves no.', 'Detailed Notation', 'Actual Notation', 'Move Type', 'Player'])
@@ -831,7 +831,7 @@ class ChessBoard:
                 if isinstance(prop, (tuple, list)):
                     # Ensure all properties are satisfied
                     if all(p in piece_properties for p in prop):
-                        if first_occurence:  # Return immediately if only first occurrence is needed
+                        if first_occurence:
                             return f"{c}{n}"
                         if piece.ident == 'Pawn' and piece.position[1] in '18':
                             for choice in [' =Q', ' =B', ' =N', ' =R']:
@@ -883,6 +883,34 @@ class ChessBoard:
         if not self.pair_of_all_mvs(self.player_turn[0]):
             return False, f"MATCH_OVER: Our Winner is {'Black' if self.player_turn == 'white' else 'White'}".title()
         
+        black_king = bool(self.find_all_cords(["King", "black"]))
+        white_king = bool(self.find_all_cords(["King", "white"]))
+
+        # Get all the remaining pieces on the board
+        pieces_left = {item.symbol for row in self.board for item in row}
+
+        # Common draw conditions for insufficient material
+        insufficient_material = [
+            {"[_]", "[♚]", "[♔]"},  # Only kings
+            {"[_]", "[♚]", "[♔]", "[♙]"},  # Kings and one white pawn
+            {"[_]", "[♚]", "[♔]", "[♟︎]"},  # Kings and one black pawn
+            {"[_]", "[♚]", "[♔]", "[♘]"},  # Kings and a knight
+            {"[_]", "[♚]", "[♔]", "[♗]"},  # Kings and a bishop
+            {"[_]", "[♚]", "[♔]", "[♗]", "[♝]"},  # Kings and opposite-colored bishops
+            {"[_]", "[♚]", "[♔]", "[♘]", "[♙]"},  # Kings, knight, and white pawn
+            {"[_]", "[♚]", "[♔]", "[♘]", "[♟︎]"},  # Kings, knight, and black pawn
+        ]
+        # Check for insufficient material draw
+        if any(pieces_left == condition for condition in insufficient_material):
+            return False, 'GAME_DRAW: Insufficient material for either side to win.'
+
+        # Check if one side has won
+        if black_king and not white_king:
+            return False, 'GAME_OVER: Black wins.'
+        elif white_king and not black_king:
+            return False, 'GAME_OVER: White wins.'
+
+        # Otherwise, the game continues
         return True, f'Now it\'s {self.player_turn.title()}\'s turn.'
     
     @staticmethod
@@ -913,7 +941,7 @@ class ChessBoard:
         else:
             return None
     
-    def cmd_panel(self):
+    def open_cmd(self):
         """
         Interactive Command Panel for Chess Game Control
 
@@ -1060,7 +1088,7 @@ class ChessBoard:
             
             cords = self.get_destinations()
             if cords == "--cmd":
-                t = self.cmd_panel()
+                t = self.open_cmd()
                 game_flag, message1 = self.check_board()
                 game_flag &= t
                 if not game_flag:
@@ -1078,7 +1106,7 @@ class ChessBoard:
                     f.write(str(self.tabular_history) + '\n')
 
             self.change_player_turn()
-            bool1, message1 = self.check_board()
+            game_flag, message1 = self.check_board()
             
         if (MAKE_RECORD_OF_MOVES_IN_OTHER_FILE and self.have_history):
             with open(MOVES_HISTORY_PATH, '+a') as f:
@@ -1101,7 +1129,7 @@ class ChessBoard:
                 )
             )
         return nor_moves
-        
+    
 if __name__ == "__main__":
     # Display the mission objective to the user
     print("Mission: Find a move for a checkmate")
