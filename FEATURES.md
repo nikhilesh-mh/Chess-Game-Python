@@ -184,8 +184,8 @@ This project keeps a comprehensive record of the move history, including details
 - #### Directly Through `moves_his.txt` File:
   - The program simultaneously records move history in a file named `moves_his.txt` located in the `src` folder (the same location as `chessboard_.py`).
   - You can check the file for a complete record of the game’s move history.
-
-  **Example**: [Location of `moves_his.txt`](src/moves_his.txt)
+    
+    **Example**: [Location of `moves_his.txt`](src/moves_his.txt)
 
 ### Customizations:
 Programmers can customize how the move history is recorded by modifying constant variables in `chessboard_.py`:
