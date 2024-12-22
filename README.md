@@ -1,16 +1,3 @@
-Your README looks great and well-structured! Here are a few minor suggestions for finalizing it:
-
-1. **Clarify the "Short Game" and "Full Game" distinction**:  
-   Consider briefly explaining what the short game is and how it differs from the full game for better clarity. 
-   
-2. **Emphasize running the game**:  
-   If players need to navigate into the `src` directory, mention it explicitly under **Usage**.
-
-3. **Minor formatting fixes**:  
-   Add the section where it mentions the file locations in a clearer format for those who may not notice the "src" directory.
-
-Here's your final README with these minor adjustments:
-
 ---
 
 # Chess-Game-Python  
@@ -86,5 +73,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Inspired by classic chess games.
 
 ---
-
-This version should be clear and polished for anyone visiting your project. Let me know if you'd like to adjust anything further!
