@@ -1101,14 +1101,31 @@ class ChessBoard:
                 )
             )
         return nor_moves
+        
+if __name__ == "__main__":
+    # Display the mission objective to the user
+    print("Mission: Find a move for a checkmate")
+    input("[Press Enter to continue...]")
     
-if __name__ == "__main__":            
-    cb = ChessBoard()
-    cb.apply_history (
-        [('e2', 'e4'), ('e7', 'e5'), ('d1', 'h5'), ('g7', 'g6'),
-         ('h5', 'e5'), ('f8', 'e7'), ('e5', 'h8'), ('e7', 'f8'),
-         ('h8', 'g8'), ('f7', 'f5'), ('f1', 'c4'), ('d7', 'd6'),], # ('g8', 'f7')],
-        print_each_state=True,
-        make_record=True,
-        )
-    cb.launch_chess_game()
+    # Initialize the chessboard
+    board = ChessBoard()
+    
+    # Apply a sequence of moves to the board
+    # Moves are represented as tuples ('start_square', 'end_square')
+    board.apply_history(
+        [
+            ('e2', 'e4'), ('e7', 'e5'), 
+            ('d1', 'h5'), ('g7', 'g6'),
+            ('h5', 'e5'), ('f8', 'e7'),
+            ('e5', 'h8'), ('e7', 'f8'),
+            ('h8', 'g8'), ('f7', 'f5'), 
+            ('f1', 'c4'), ('d7', 'd6'),
+            # Uncomment the following move if needed:
+            # ('g8', 'f7'),
+        ],
+        print_each_state=False,  # Disable state printing for clarity
+        make_record=True         # Enable move recording for future analysis
+    )
+    
+    # Launch the interactive chess game
+    board.launch_chess_game()
