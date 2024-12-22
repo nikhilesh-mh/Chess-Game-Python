@@ -160,8 +160,6 @@ Here’s a list of commands you can use in the command mode:
 - **Flexibility**: Options like toggling board colors and displaying board notation offer customization during the game.
 - **Error Handling**: The ability to reset (`--rsg`) and undo moves provides a safety net for mistakes.
 
-
-
 ## Feature 4: Move History
 
 This project keeps a comprehensive record of the move history, including details like:
