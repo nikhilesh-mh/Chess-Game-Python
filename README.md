@@ -2,6 +2,18 @@
 
 # Chess-Game-Python  
 ![Version](https://img.shields.io/badge/version-1.0.0-g.svg)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Last Commit](https://img.shields.io/github/last-commit/NikMehraDev/Chess-Game-Python)
+![Languages](https://img.shields.io/github/languages/top/NikMehraDev/Chess-Game-Python)
+![Python](https://img.shields.io/badge/python-3.6+-blue)
+![Issues](https://img.shields.io/github/issues/NikMehraDev/Chess-Game-Python)
+![Dependencies](https://img.shields.io/badge/dependencies-up--to--date-brightgreen)
+![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen)
+![Build Status](https://img.shields.io/github/actions/workflow/status/NikMehraDev/Chess-Game-Python/chessboard_.py)
+
+
+![GitHub stars](https://img.shields.io/github/stars/NikMehraDev/Chess-Game-Python)
+![Repo Size](https://img.shields.io/github/repo-size/NikMehraDev/Chess-Game-Python)
 
 A Python-based chess game designed with a command-line interface (CLI) for clear visual presentation. This project utilizes **prettytable** for formatting the move history, avoiding the use of large libraries. It provides a straightforward two-player chess experience with efficient and readable board rendering in the terminal.
 
