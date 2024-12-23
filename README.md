@@ -69,7 +69,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-- **prettytable**: Used to format the move history neatly in the [`moves_his.py`](src/moves_his.py).
+- **prettytable**: Used to format the move history neatly in the [`moves_his.py`](/main/src/moves_his.txt).
 - Inspired by classic chess games.
 
 ---
