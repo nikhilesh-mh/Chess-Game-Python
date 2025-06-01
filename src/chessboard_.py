@@ -20,7 +20,7 @@ UI_SETTINGS = {
     "Player's Name On Corner": True,
     "Display Colored Board": True,
 }
-R, G, B = (30 ,0, 70) # Adjust these values (r >= 60, g >= 20, b >= 80)
+R, G, B = (0 ,0, 0) # Adjust these values (r >= 60, g >= 20, b >= 80)
 
 class ChessBoard: 
     tabular_history = PrettyTable(['Moves no.', 'Detailed Notation', 'Actual Notation', 'Move Type', 'Player'])

@@ -1,0 +1,3 @@
+# Autonmatically created in every game when MAKE_RECORD_OF_MOVES_IN_OTHER_FILE set to be True in src/chessboard_.py file
+moves_his.txt 
+__pycache__
