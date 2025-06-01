@@ -46,8 +46,8 @@ For more information, check this [FEATURES.md](FEATURES.md).
    - Ensure you are using Python 3.6 or later.
    - It's recommended to use a virtual environment for managing dependencies.
 
----
 
+---
 ## Usage
 
 1. **For Short Game Example.**
@@ -69,6 +69,40 @@ For more information, check this [FEATURES.md](FEATURES.md).
       - The game will prompt players to enter moves in standard chess notation (e.g., "e2" and then "e4").
       - The board will be displayed after each move.
       - Players can see the history of their moves formatted in a table.
+
+---
+
+## Lightweight Install (Minimal Version)
+
+If you want only the **core game** without extras like assets or extended documentation:
+
+1. Clone only required parts:
+
+   ```bash
+   git clone https://github.com/NikMehraDev/Chess-Game-Python.git --depth 1
+   cd Chess-Game-Python
+   ```
+
+2. Remove optional folders/files (like `assets/`):
+
+   ```bash
+   rm -rf assets FEATURES.md
+   ```
+
+3. Install minimal dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Run the game:
+
+   ```bash
+   python src/chessboard_.py  # for short example
+   python src/chessboard_usage.py  # for full game
+   ```
+
+> ✅ This version runs without any extra resource. Designed for **terminal-only gameplay**.
 
 ---
 
